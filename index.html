@@ -1,20 +1,127 @@
-<head>
-    <!-- This will show up on the tab in your browser -->
-    <title>My Portfolio</title>
+<!DOCTYPE html>
+<!--
+Template Name: Chillaid
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 
-    <!-- This links your css file to the html -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+<head>
+    <title>Chillaid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
-<body>
-    <!-- This is the start of the "About" section -->
-    <div class="about">
-        <h1>About</h1>
-        <p>Welcome to my portfolio</p>
+<body id="top">
+
+    <div class="bgded overlay" style="background-image:url('images/1.jpg');">
+        <div id="pageintro" class="hoc clear">
+
+            <article>
+                <h3 class="heading">Kamu di undang yah</h3>
+                <p>Ke ulang tahun pertamaku</p>
+            </article>
+
+        </div>
     </div>
 
-    <!-- This is the start of the projects section -->
-    <div class="projects">
-        <h1>Projects</h1>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <!-- main body -->
+
+            <section id="introblocks">
+                <ul class="nospace group btmspace-80 elements elements-four">
+                    <li class="one_quarter">
+                        <article><a href="#"><i class="fas fa-clock"></i></a>
+                            <h6 class="heading">25 September 2022</h6>
+                        </article>
+                    </li>
+                    <li class="one_quarter">
+                        <article><a href="#"><i class="fas fa-home"></i></a>
+                            <h6 class="heading">Sektor 7C, DG 6 No. 54 Gading Serpong</h6>
+                            <p>Klik disini untuk <a
+                                    href="https://www.google.com/maps/place/DG6+Jl.+Klp.+Lilin+XII+No.54,+Klp.+Dua,+Kec.+Klp.+Dua,+Kabupaten+Tangerang,+Banten+15810/@-6.2440126,106.6221166,21z/data=!4m12!1m6!3m5!1s0x0:0x523eb9e78e931076!2sGaunweddding.com!8m2!3d-6.2444587!4d106.6136341!3m4!1s0x2e69fc0cb1a6a7b3:0xc7250b8bd42f3593!8m2!3d-6.2438505!4d106.6223264">maps</a>
+                            </p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </main>
     </div>
+
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 2</div>
+            <img src="images/1.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 2</div>
+            <img src="images/2.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+
+    <!-- JAVASCRIPTS -->
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/jquery.mobilemenu.js"></script>
+    <!-- Homepage specific -->
+    <script src="layout/scripts/jquery.easypiechart.min.js"></script>
+    <!-- / Homepage specific -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 </body>
+
+</html>
